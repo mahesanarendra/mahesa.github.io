@@ -8,9 +8,20 @@ body {
 }
 
 .tulip-container {
+  opacity: 0;
+   animation: fadeIn 2s forwards;
   position: relative;
 }
 
+@keyframes fadeIn {
+  from {
+     opacity: 0;
+  }
+}
+  to {
+    opacity: 1;
+  }
+    
 .stem {
   width: 10px;
   height: 150px;
@@ -30,6 +41,7 @@ body {
   bottom: 150px;
   left: 50%;
   transform: translateX(-50%);
+  animation: shake 2s infinite;
 }
 
 .petal {
@@ -55,4 +67,13 @@ body {
   background-color: #FFFF00;
   border-radius: 50%;
   position: absolute;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(-50%);
+  }
+  50% {
+    transform: translateX(-50%) rotate(5deg);
+  }
 }
